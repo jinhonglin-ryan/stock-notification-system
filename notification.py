@@ -71,7 +71,7 @@ class NotificationSystem:
                 direction = 'rise' if pct_change > 0 else 'drop'
                 message = f"{ticker}: {direction} >= 1%, Timestamp: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
                 self.send_sms(message)
-                print(message)
+                # print(message)
 
     def send_sms(self, message):
         """
@@ -100,25 +100,25 @@ class NotificationSystem:
 
 
 if __name__ == "__main__":
-    # # Define the stock tickers to monitor
-    # tickers_to_monitor = ['SPY', 'IWM', 'QQQ']
-    #
-    # # Initialize the notification system
-    # notification_system = NotificationSystem(tickers=tickers_to_monitor)
-    #
-    # # Start monitoring
-    # notification_system.start_monitoring()
+    # Define the stock tickers to monitor
+    tickers_to_monitor = ['SPY', 'IWM', 'QQQ']
+    
+    # Initialize the notification system
+    notification_system = NotificationSystem(tickers=tickers_to_monitor)
+    
+    # Start monitoring
+    notification_system.start_monitoring()
 
 
-    account_sid = TWILIO_ACCOUNT_SID
-    auth_token = TWILIO_AUTH_TOKEN
-    twilio_number = TWILIO_PHONE_NUMBER
-    phone_number = PHONE_NUMBER
+    # account_sid = TWILIO_ACCOUNT_SID
+    # auth_token = TWILIO_AUTH_TOKEN
+    # twilio_number = TWILIO_PHONE_NUMBER
+    # phone_number = PHONE_NUMBER
 
 
-    client = Client(account_sid, auth_token)
-    client.messages.create(
-        to=phone_number,
-        from_=twilio_number,
-        body="Hello there!")
+    # client = Client(account_sid, auth_token)
+    # client.messages.create(
+    #     to=phone_number,
+    #     from_=twilio_number,
+    #     body="Hello there!")
 

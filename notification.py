@@ -36,7 +36,7 @@ class NotificationSystem:
         """
         for ticker in self.tickers:
             stock = yf.Ticker(ticker)
-            hist = stock.history(period='2d')  # Get the last two days of historical data
+            hist = stock.history(period='1d')  # Get the last two days of historical data
 
             # Check if data was returned
             if hist.empty:
@@ -102,10 +102,10 @@ class NotificationSystem:
 if __name__ == "__main__":
     # Define the stock tickers to monitor
     tickers_to_monitor = ['SPY', 'IWM', 'QQQ']
-    
+
     # Initialize the notification system
     notification_system = NotificationSystem(tickers=tickers_to_monitor)
-    
+
     # Start monitoring
     notification_system.start_monitoring()
 

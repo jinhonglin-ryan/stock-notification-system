@@ -1,4 +1,4 @@
-name: "Run Docs CI"
+name: "Run Docs CI with UV"
 
 on:
   pull_request:

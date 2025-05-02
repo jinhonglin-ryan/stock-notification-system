@@ -16,12 +16,11 @@ jobs:
           uses: astral-sh/setup-uv@v5
         - name: Install dependencies
           run: |
-            uv sync --all-extras --dev
-            source .venv/bin/activate
+            uv pip install mkdocs mkdocs-material mkdocs-jupyter
             
         - name: Build docs
-          run: uv run mkdocs build --verbose --clean
+          run: mkdocs build --verbose --clean
           
         - name: Build and push docs
           if: inputs.deploy
-          run: uv run mkdocs gh-deploy --force
+          run: mkdocs gh-deploy --force

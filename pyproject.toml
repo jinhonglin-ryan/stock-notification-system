@@ -21,6 +21,19 @@ dev = [
     "ruff>=0.0.270",
 ]
 
+[tool.hatch.build]
+include = [
+    "notification.py",
+    "*.md",
+    "docs/**",
+]
+exclude = [
+    "site/**",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
 [tool.ruff]
 line-length = 100
 target-version = "py39"
